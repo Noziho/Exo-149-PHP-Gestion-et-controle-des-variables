@@ -5,10 +5,15 @@
 /**
  * 1. Vérifiez si cette variable est vide, si c'est le cas, affichez vide si non affichez pas vide.
  */
-$var = 0;
+
 // TODO votre code ici.
 
-
+$var = 0;
+if (empty($var)) {
+    echo "La variable est vide";
+} else {
+    echo "La variable n'est pas vide";
+}
 
 
 /**
@@ -16,20 +21,23 @@ $var = 0;
  */
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
-
+unset($eraseMe);
+//print_r($eraseMe);
 
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
-
+echo "<br><br>";
+$tab = [1, 2, 3, 4, 5];
+var_dump($tab);
 echo "<br>";
 
 /**
  * 4. Faites la même chose avec le même tableau, mais pour la méthode print_r.
  */
 // TODO votre code ici.
-
+print_r($tab);
 echo "<br>";
 
 
@@ -39,6 +47,12 @@ echo "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
+if (isset($tab['doNotExists'])) {
+    echo "La clé existe <br>";
+}
+else {
+    echo "La clé n'existe pas";
+}
 
 
 /**
@@ -63,3 +77,25 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+echo"<br><br>";
+$myBool = true;
+$myInt = 42;
+$myFloat = 22.11;
+$myString = "Ah ça oui !";
+
+function checkType ($varToCheck) {
+    if (is_bool($varToCheck)) {
+        echo "La variable est un booléen";
+    }
+    elseif (is_int($varToCheck)) {
+        echo "La variable est un integer";
+    }
+    elseif (is_float($varToCheck)) {
+        echo "La variable est un float";
+    }
+    elseif (is_string($varToCheck)) {
+        echo "La variable est une string";
+    }
+}
+
+checkType($myFloat);
